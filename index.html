@@ -21,11 +21,18 @@
       arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
     >
       <!-- we use cors proxy to avoid cross-origin problems -->
-      <a-marker preset=’custom’ type=’pattern’ url=’https://ar-practice.netlify.app/pattern-hiro-marker.patt’>
-        <a-box position='0 1 0' material='opacity: 0.5; color: #F70087;'></a-box>
+      <a-marker
+        preset="custom"
+        type="pattern"
+        url="https://ar-practice.netlify.app/pattern-hiro-marker.patt"
+      >
+        <a-box
+          position="0 1 0"
+          material="opacity: 0.5; color: #F70087;"
+        ></a-box>
       </a-marker>
-     
-        <!-- <a-entity
+
+      <!-- <a-entity
           gltf-model=""
           scale="5 5 5"
           position="50 150 0"
@@ -33,8 +40,6 @@
         </a-entity> -->
       <a-entity camera></a-entity>
     </a-scene>
-
-    
   </body>
 </html>
 
