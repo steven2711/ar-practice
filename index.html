@@ -28,7 +28,8 @@
         type="pattern"
         url="https://www.ar-practice.netlify.app/pattern-hiro-marker.patt"
       > -->
-      <a-marker preset="hiro">
+
+      <!-- <a-marker preset="hiro">
         <a-entity
           gltf-model="scene.glb"
           scale="0.01 0.01 0.01"
@@ -37,13 +38,20 @@
           visible=""
         >
         </a-entity>
-        <!-- <a-box
-          position="0 1 0"
-          material="opacity: 0.5; color: #F70087;"
-        ></a-box> -->
-      </a-marker>
+      </a-marker> -->
 
-      <a-entity camera></a-entity>
+      <a-entity
+      gltf-model="scene.glb"
+      scale="0.01 0.01 0.01"
+      position=""
+      rotation=""
+      visible=""
+      gps-entity-place="latitude: 35.8474985; longitude:-86.3847293;"
+    >
+
+      <a-camera gps-camera rotation-reader></a-camera>
+
+      <!-- <a-entity camera></a-entity> -->
     </a-scene>
   </body>
 </html>
