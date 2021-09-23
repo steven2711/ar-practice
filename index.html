@@ -6,6 +6,7 @@
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
   </head>
 
@@ -18,10 +19,15 @@
       vr-mode-ui="enabled: false;"
       renderer="logarithmicDepthBuffer: true;"
       embedded
-      arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: true;"
+      arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
     >
+      <!-- Asset Management -->
       <a-assets>
-        <a-asset-item id="animated-asset" src="robot.glb"></a-asset-item>
+        <a-asset-item id="robot-asset" src="assets/robot.glb"></a-asset-item>
+        <a-asset-item
+          id="star-asset"
+          src="starwars-tie-fighter.glb"
+        ></a-asset-item>
       </a-assets>
       <!-- <a-marker
         preset="custom"
@@ -29,16 +35,25 @@
         url="https://www.ar-practice.netlify.app/pattern-hiro-marker.patt"
       > -->
 
-      <a-marker preset="hiro">
+      <a-nft
+        type="nft"
+        url="stickytomato/stickytomato"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance=".01"
+        smoothThreshold="5"
+        size="1"
+      >
         <a-entity
-          gltf-model="robot.glb"
-          scale="0.01 0.01 0.01"
-          position=""
-          rotation=""
+          gltf-model="#robot-asset"
+          scale="1.5 1.5 1.5"
+          position="130 100 100"
+          rotation="0 0 0"
           visible=""
+          animation-mixer
         >
         </a-entity>
-      </a-marker>
+      </a-nft>
 
       <!-- <a-entity
         gltf-model="scene.glb"
@@ -53,18 +68,3 @@
     </a-scene>
   </body>
 </html>
-
-<!-- Liquid Smoke -->
-<!-- 35.846591648247376, -86.39149191726466 -->
-
-<!-- Barfield -->
-<!-- 35.78205280039411, -86.41322849635947 -->
-
-<!-- Home -->
-<!-- 35.847631467085314, -86.38485667407335 -->
-
-<!-- Ajs home -->
-<!-- 35.184085216236255, -84.89132140519787 -->
-
-<!-- Road Test -->
-<!-- 35.23724571247544, -85.84307675917222 -->
