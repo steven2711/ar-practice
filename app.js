@@ -1,6 +1,14 @@
-const anchor = document.getElementById("#anchor");
+const anchor = document.getElementById("anchor");
 
-anchorRef.addEventListener("markerFound", (e) => {
-  e.prevenDefault();
-  console.log("marker found");
+anchor.addEventListener("markerFound", (e) => {
+  const sound = new Audio("test.mp3");
+  sound.play();
+
+  console.log("played sound");
+
+  anchor.addEventListener("markerLost", (e) => {
+    sound.pause();
+
+    console.log("paused sound");
+  });
 });
